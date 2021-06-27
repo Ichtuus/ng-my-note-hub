@@ -18,7 +18,8 @@ export class NoteItemComponent implements OnInit {
   removeNote(id: number|null) {
     console.log('id', id)
     if (id) {
-      this.ns.deleteNote(id).subscribe()
+      const note = this.ns.deleteNote(id)
+      console.log('test delete', note)
     }
   }
 

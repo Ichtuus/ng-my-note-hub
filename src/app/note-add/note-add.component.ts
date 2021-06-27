@@ -14,7 +14,8 @@ export class NoteAddComponent implements OnInit {
   }
 
   async addNote (formData: any) {
-    await this.ns.createNote(formData.value).subscribe()
+    const result = await this.ns.createNote(formData.value)
+    console.log('result after create note', result)
     formData.reset()
   }
 }

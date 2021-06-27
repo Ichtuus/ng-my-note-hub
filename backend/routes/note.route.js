@@ -5,7 +5,7 @@ const noteRoute = express.Router();
 let Note = require('../models/Note');
 
 // Add Note
-noteRoute.route('create').post((req, res, next) => {
+noteRoute.route('/create').post((req, res, next) => {
   console.log('create', req)
   Note.create(req.body.data, (error, data) => {
     if (error) {
