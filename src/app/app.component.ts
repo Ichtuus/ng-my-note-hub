@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bdex-app-angular';
+  links = [
+    { title: 'Home', path: '' },
+    { title: 'Note', path: '/add-note' },
+    { title: 'List Note', path: '/list-note' }
+  ];
+  constructor(public route: ActivatedRoute) {}
 }

@@ -1,0 +1,15 @@
+<div>
+  <h3>All notes</h3>
+  <small><span class="badge badge-pill badge-primary">{{notes$.length}}</span></small>
+</div>
+
+<div *ngIf="notes$; else elseBlock">
+  <div *ngFor="let note of notes$">
+    <app-note-item [note]="note"></app-note-item>
+  </div>
+</div>
+
+<ng-template #elseBlock>
+  <p>No more note</p>
+</ng-template>
+

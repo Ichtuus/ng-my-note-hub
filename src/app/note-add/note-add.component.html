@@ -1,0 +1,24 @@
+<form class="col-lg-10 col-lg-offset-1" #f="ngForm" (submit)="addNote(f)" >
+  <div class="form-group">
+    <label>Name</label>
+    <input ngModel name="name" class="form-control" type="text">
+  </div>
+
+  <div class="form-group">
+    <label>Content</label>
+    <textarea ngModel name="content" class="form-control" cols="30" rows="10" type="text"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label>Content type</label>
+    <select ngModel name="type" class="form-control" id="content-type">
+      <option value="Hobbies">Hobbie</option>
+      <option value="Personal">Personal</option>
+      <option value="Lifestyle">Lifestyle</option>
+      <option value="Professional">Professional</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <button class="btn btn-primary" type="submit">Add</button>
+</form>

@@ -1,0 +1,6 @@
+<div class="mnh-note-item">
+  <h3>{{note.name}}</h3>
+  <small><span class="badge badge-pill badge-secondary btn-sm">{{note.type}}</span></small>
+  <button (click)="removeNote(note._id)" class="btn btn-danger d-inline" type="submit"><i class="far fa-trash-alt"></i></button>
+  <p>{{note.content}}</p>
+</div>
