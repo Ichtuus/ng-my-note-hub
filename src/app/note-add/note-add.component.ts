@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NoteService} from "../services/note.service";
 
 @Component({
@@ -8,14 +8,15 @@ import {NoteService} from "../services/note.service";
 })
 export class NoteAddComponent implements OnInit {
 
+  d: any
   constructor(private ns: NoteService) { }
 
   ngOnInit(): void {
   }
 
   async addNote (formData: any) {
-    const result = await this.ns.createNote(formData.value)
-    console.log('result after create note', result)
+    await this.ns.createNote(formData.value)
+    this.ns._notes$.subscribe(m => this.d = m)
     formData.reset()
   }
 }

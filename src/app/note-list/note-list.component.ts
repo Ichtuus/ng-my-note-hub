@@ -12,9 +12,7 @@ export class NoteListComponent implements OnInit {
   constructor(private ns: NoteService) { }
 
   ngOnInit(): void {
-    // this.ns.getNotes().subscribe(notes => this.notes$ = notes)
     this.ns.getNotes()
     this.ns.notes$.subscribe(notes => this.notes$ = notes)
-    console.log('console debug' , this.notes$)
   }
 }
