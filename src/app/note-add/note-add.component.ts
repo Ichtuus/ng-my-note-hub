@@ -7,8 +7,6 @@ import {NoteService} from "../services/note.service";
   styleUrls: ['./note-add.component.scss']
 })
 export class NoteAddComponent implements OnInit {
-
-  d: any
   constructor(private ns: NoteService) { }
 
   ngOnInit(): void {
@@ -16,7 +14,6 @@ export class NoteAddComponent implements OnInit {
 
   async addNote (formData: any) {
     await this.ns.createNote(formData.value)
-    this.ns._notes$.subscribe(m => this.d = m)
     formData.reset()
   }
 }

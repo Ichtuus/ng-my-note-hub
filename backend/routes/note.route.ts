@@ -7,14 +7,13 @@ import {APINoteOutput} from "../types/API-output/notes";
 
 // Add Note
 noteRoute.route('/create').post((req, res) => {
-  NoteModel.createNote(req.body.data).then((data) => { return res.json(outputApiResponse(data, 'Ressource has been successfuly created'))
-
+  NoteModel.createNote(req.body.data).then((data) => { return res.json(data)
   })
 });
 
 // Get All Note
 noteRoute.route('/get').get((req, res) => {
-  NoteModel.findNotes().then((data) => {return res.json(data)})
+  NoteModel.findNotes().then((data) => { return res.json(data) })
 })
 
 // Get single Note
@@ -46,18 +45,7 @@ noteRoute.route('/get').get((req, res) => {
 
 // Delete Note
 noteRoute.route('/delete/:id').delete((req , res, next) => {
-  // Note.findOneAndRemove(req.params.id, (error: any, data: any) => {
-  //   if (error) {
-  //     return next(error);
-  //   } else {
-  //     res.status(200).json({
-  //       msg: data
-  //     })
-  //   }
-  // })
-  NoteModel.deleteNote(req.params.id).then((data) => {
-    return res.status(200).json(data)
-  })
+  NoteModel.deleteNote(req.params.id).then((data) => { return res.status(200).json(data) })
 })
 
 function outputApiResponse (obj: any, message: string): APINoteOutput {
