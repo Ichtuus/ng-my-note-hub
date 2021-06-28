@@ -48,7 +48,9 @@ export class NoteModel {
         if (err) {
           reject(err)
         } else {
-          resolve(data)
+          // Get fresh list of notes
+          const notes = this.findNotes()
+          resolve(notes)
         }
       })
     })
