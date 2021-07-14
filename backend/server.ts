@@ -6,6 +6,10 @@ import bodyParser from 'body-parser'
 import createError from 'http-errors'
 import cors from 'cors'
 
+const corsOptions = {
+  origin: 'http://localhost:4200'
+}
+
 // Connecting with mongo db
 mongoose.Promise = global.Promise;
 mongoose.connect(dbConfig.db, {
@@ -25,7 +29,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
 }));
-app.use(cors());
+app.use(cors(corsOptions));
 app.use('/api', noteRoute)
 
 // Create port
