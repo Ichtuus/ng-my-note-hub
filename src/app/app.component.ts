@@ -1,17 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'bdex-app-angular';
-  links = [
-    { title: 'Home', path: '' },
-    { title: 'Note', path: '/add-note' },
-    { title: 'List Note', path: '/list-note' }
-  ];
-  constructor(public route: ActivatedRoute) {}
+  title = 'ng-my-note-hub';
 }
