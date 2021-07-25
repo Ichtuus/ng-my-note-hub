@@ -1,4 +1,4 @@
-<!-- <mat-card>
+<mat-card>
     <form class="example-form" (click)="connect()" >
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>name</mat-label>
@@ -10,15 +10,25 @@
             matInput 
             [(ngModel)]="username">
         </mat-form-field>
-        
-        <button mat-raised-button color="primary">Envoyer</button>
+        {{prout.length}}
+        <button 
+          [square]="false"
+          [outline]="true"
+          md
+          fullWidth
+          popo
+          [status]="'info'" >
+          Envoyer
+        </button>
       </form>
       
-</mat-card> -->
+</mat-card>
 
-<div style="display: inline-grid;">
+<!-- <div style="display: inline-grid;">
   <span style="grid-column: 1; width: 50px; height: 11px; border-bottom: solid 1px black;"></span>
     <span style="grid-column: 2; margin: 0 5px 0 5px;">ok</span>
   <span style="grid-column: 3 ;width: 50px; height: 11px; border-bottom: solid 1px black;"></span>
 </div>
-<div></div>
+<div></div> -->
+
+
