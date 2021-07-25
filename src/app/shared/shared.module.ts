@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatImportModule } from '../mat-import/mat-import.module';
 import { FormsModule } from '@angular/forms';
 
 
@@ -9,7 +8,6 @@ import { FormsModule } from '@angular/forms';
   declarations: [],
   exports: [
     CommonModule,
-    MatImportModule,
     FormsModule
   ]
 })

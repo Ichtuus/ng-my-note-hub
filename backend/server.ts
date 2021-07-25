@@ -4,6 +4,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
 import createError from 'http-errors'
+const path = require('path');
 import cors from 'cors'
 
 // Connecting with mongo db
@@ -26,6 +27,11 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(cors());
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname+'../src/dist/index.html'));
+});
+
+
 app.use('/api', noteRoute)
 
 // Create port
