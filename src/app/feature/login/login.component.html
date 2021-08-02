@@ -1,24 +1,103 @@
-<mat-card>
-  <form class="example-form" (click)="connect()">
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>name</mat-label>
-      <input
-        required
-        minlength="2"
-        maxlength="12"
-        name="username"
-        type="text"
-        matInput
-        [(ngModel)]="username"
-      />
-    </mat-form-field>
-    <button mat-raised-button>Envoyer</button>
-  </form>
-</mat-card>
+<div class="container" style="max-width: 550px">
+  <h2 class="text-center mb-5">Angular Login with Google</h2>
 
-<!-- <div style="display: inline-grid;">
-  <span style="grid-column: 1; width: 50px; height: 11px; border-bottom: solid 1px black;"></span>
-    <span style="grid-column: 2; margin: 0 5px 0 5px;">ok</span>
-  <span style="grid-column: 3 ;width: 50px; height: 11px; border-bottom: solid 1px black;"></span>
+  <div *ngIf="isLoggedin === false">
+    <div>
+      <button type="button" (click)="loginWithGoogle()" class="btn btn-danger">
+        Login with Google
+      </button>
+    </div>
+  </div>
+
+  <div>
+    <button type="button" (click)="loginWithFacebook()" class="btn btn-danger">
+      Login with Facebook
+    </button>
+  </div>
 </div>
-<div></div> -->
+
+<div *ngIf="isLoggedin === true">
+  <div class="form-group">
+    <label>First Name</label>
+    <input
+      type="text"
+      class="form-control"
+      [value]="socialUser.firstName"
+      id="firstname"
+      readonly
+    />
+  </div>
+  <div class="form-group">
+    <label>Last Name</label>
+    <input
+      type="text"
+      class="form-control"
+      [value]="socialUser.lastName"
+      id="lastname"
+      readonly
+    />
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input
+      type="text"
+      class="form-control"
+      [value]="socialUser.email"
+      id="email"
+      readonly
+    />
+  </div>
+
+  <button type="button" (click)="logOut()" class="btn btn-primary">
+    Log Out
+  </button>
+</div>
+
+<h2 class="text-center mb-4">Login with Facebook in Angular</h2>
+
+<div *ngIf="!isLoggedin">
+  <button
+    type="button"
+    (click)="loginWithFacebook()"
+    class="btn btn-primary btn-block"
+  >
+    Signin with Facebook
+  </button>
+</div>
+
+<div *ngIf="isLoggedin === true">
+  <div class="form-group">
+    <label>First Name</label>
+    <input
+      type="text"
+      class="form-control"
+      [value]="socialUser.firstName"
+      id="firstname"
+      readonly
+    />
+  </div>
+  <div class="form-group">
+    <label>Last Name</label>
+    <input
+      type="text"
+      class="form-control"
+      [value]="socialUser.lastName"
+      id="lastname"
+      readonly
+    />
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input
+      type="text"
+      class="form-control"
+      [value]="socialUser.email"
+      id="email"
+      readonly
+    />
+  </div>
+
+  <button type="button" (click)="signOut()" class="btn btn-primary">
+    Sign Out
+  </button>
+</div>
